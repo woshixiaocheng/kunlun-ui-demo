@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {//设置路径映射
+      "@kunlun-ui/*":["kunlun-ui/*"]
+      },
+      "jsx": "preserve",
+      "strict": true,
+      "target": "ES2015",
+      "module": "ESNext",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "moduleResolution": "Node",
+      "lib": ["esnext", "dom"]
+    }
+}

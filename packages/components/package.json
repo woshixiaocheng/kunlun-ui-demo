@@ -1,0 +1,15 @@
+{
+  "name": "kunlun-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build":"vite build"
+  },
+  "files": ["es","lib"],
+  "keywords": ["kunlun-ui","vue3组件库"],
+  "author": "小成",
+  "license": "MIT",
+  "typings": "lib/index.d.ts"
+}
