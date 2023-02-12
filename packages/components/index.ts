@@ -1,9 +1,10 @@
-
-import components from './src/index'
-export * from './src/index'
+import {components} from './src/index'
+export * from './src/index'//为了可以按需引入
 import  { App } from 'vue'
-export default {
-  install: (app: App) => {
-    components.forEach(c => app.use(c))
-  },
+const install= (app: App) => {
+  components.forEach(c => app.use(c))
 }
+export default {
+  install
+  }
+

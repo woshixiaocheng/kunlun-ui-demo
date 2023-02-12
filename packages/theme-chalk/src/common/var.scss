@@ -1,0 +1,185 @@
+@import '../mixins/config.scss';
+//公共变量+所有组件样式变量，可以通过这个文件实现组件库的换肤
+
+//mix函数可以把两种颜色按不同的占比混合生成一个新的颜色，例如 mix($--color-white, $--color-primary, 10%), $--color-white 颜色占比 10%，$--color-primary 占比 90%，生成一种新的颜色
+
+/*公共global*/
+//color
+$--color-primary: #409eff !default;
+/// color|1|Background Color|4
+$--color-white: #ffffff !default;
+/// color|1|Background Color|4
+$--color-black: #000000 !default;
+$--color-primary-light-1: mix(
+  $--color-white,
+  $--color-primary,
+  10%
+) !default; /* 53a8ff */
+$--color-primary-light-2: mix(
+  $--color-white,
+  $--color-primary,
+  20%
+) !default; /* 66b1ff */
+$--color-primary-light-3: mix(
+  $--color-white,
+  $--color-primary,
+  30%
+) !default; /* 79bbff */
+$--color-primary-light-4: mix(
+  $--color-white,
+  $--color-primary,
+  40%
+) !default; /* 8cc5ff */
+$--color-primary-light-5: mix(
+  $--color-white,
+  $--color-primary,
+  50%
+) !default; /* a0cfff */
+$--color-primary-light-6: mix(
+  $--color-white,
+  $--color-primary,
+  60%
+) !default; /* b3d8ff */
+$--color-primary-light-7: mix(
+  $--color-white,
+  $--color-primary,
+  70%
+) !default; /* c6e2ff */
+$--color-primary-light-8: mix(
+  $--color-white,
+  $--color-primary,
+  80%
+) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+$--color-success: #67c23a !default;
+$--color-warning: #e6a23c !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+//bgc
+$--background-color-base: #f5f7fa !default;
+
+//border-radius
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-round: 20px !default;
+$--border-radius-circle: 100% !default;
+
+//font-size
+$--font-size-large: 18px !default;
+$--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-extra-small: 12px !default;
+
+//font-weight
+$--font-weight-base: 500;
+//text-color
+$--text-color-base: #606266 !default;
+$--text-color-white: #ffffff !default;
+$--text-color-placeholder: #c0c4cc !default;
+//border-color
+$--border-color-base: #dcdfe6 !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+
+/*component组件的，组件的基础可以直接调用上面的公共样式即可*/
+
+/*---button----*/
+
+/*base*/
+//font-size
+$--button-font-size-base: $--font-size-base !default;
+//font-weight
+$--button-font-weight: $--font-weight-base !default;
+//border-radius
+$--button-border-radius: $--border-radius-base !default;
+//height size
+$--button-size: 32px;
+//padding
+$--button-padding-vertical: 9px !default;
+$--button-padding-horizontal: 15px !default;
+
+/*large*/
+//font-size
+$--button-large-font-size: $--font-size-large !default;
+//border-radius
+$--button-large-border-radius: $--border-radius-base !default;
+//height size
+$--button-large-size: 36px;
+//padding
+$--button-large-padding-vertical: 12px !default;
+$--button-large-padding-horizontal: 20px !default;
+
+/*small*/
+//font-size
+$--button-small-font-size: $--font-size-small !default;
+//border-radius
+$--button-small-border-radius: #{$--border-radius-base -1} !default;
+//height size
+$--button-small-size: 28px;
+//padding
+$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-horizontal: 15px !default;
+
+/*mini*/
+
+/*color*/
+//default
+$--button-default-font-color: $--text-color-base !default;
+$--button-default-background-color: $--color-white !default;
+$--button-default-border-color: $--border-color-base !default;
+$--button-disabled-font-color: $--text-color-placeholder !default;
+$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-border-color: $--border-color-lighter !default;
+
+//primary
+$--button-primary-border-color: $--color-primary !default;
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-background-color: $--color-primary !default;
+
+//success
+$--button-success-border-color: $--color-success !default;
+$--button-success-font-color: $--color-white !default;
+$--button-success-background-color: $--color-success !default;
+
+//warning
+$--button-warning-border-color: $--color-warning !default;
+$--button-warning-font-color: $--color-white !default;
+$--button-warning-background-color: $--color-warning !default;
+
+//danger
+$--button-danger-border-color: $--color-danger !default;
+$--button-danger-font-color: $--color-white !default;
+$--button-danger-background-color: $--color-danger !default;
+
+//info
+$--button-info-border-color: $--color-info !default;
+$--button-info-font-color: $--color-white !default;
+$--button-info-background-color: $--color-info !default;
+
+//mix混合的百分比
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+/*col 媒体查询*/
+$--sm: 768px !default;
+$--md: 992px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+$--breakpoints: (
+  'xs': (
+    max-width: $--sm,
+  ),
+  'sm': (
+    min-width: $--sm,
+  ),
+  'md': (
+    min-width: $--md,
+  ),
+  'lg': (
+    min-width: $--lg,
+  ),
+  'xl': (
+    min-width: $--xl,
+  ),
+);

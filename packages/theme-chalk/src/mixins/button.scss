@@ -1,0 +1,65 @@
+//button的
+//设置button的size
+@mixin button-size(
+  $size,
+  $padding-vertical,
+  $padding-horizontal,
+  $font-size,
+  $border-radius
+) {
+  height: $size;
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+//处理type
+@mixin button-type($color, $border-color, $background) {
+  color: $color;
+  background-color: $border-color;
+  border-color: $background;
+  //以混合白色的方式让传入的值变淡！！
+  &:hover,
+  &:focus {
+    color: mix($--color-white, $color, $--button-hover-tint-percent);
+    border-color: mix(
+      $--color-white,
+      $border-color,
+      $--button-hover-tint-percent
+    );
+    background-color: mix(
+      $--color-white,
+      $background,
+      $--button-hover-tint-percent
+    );
+  }
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus {
+    color: mix($--color-white, $color, 60%);
+    border-color: mix($--color-white, $border-color, 40%);
+    background-color: mix($--color-white, $background, 40%);
+  }
+  &.is-plain {
+    @include button-plain($background);
+  }
+}
+//处理plain
+@mixin button-plain($color) {
+  color: $color;
+  border-color: mix($--color-white, $color, 60%);
+  background-color: mix($--color-white, $color, 90%);
+  &:hover,
+  &:focus {
+    color: $--color-white;
+    border-color: $color;
+    background-color: $color;
+  }
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus {
+    color: mix($--color-white, $color, 60%);
+    border-color: mix($--color-white, $color, 80%);
+    background-color: mix($--color-white, $color, 90%);
+  }
+}

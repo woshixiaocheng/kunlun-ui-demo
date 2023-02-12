@@ -2,14 +2,16 @@
   "name": "examples",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "kunlun-ui": "workspace:^1.0.0"
+    "element-plus": "^2.2.28",
+    "kunlun-ui": "workspace:^1.0.0",
+    "theme-chalk": "workspace:^1.0.0"
   }
 }

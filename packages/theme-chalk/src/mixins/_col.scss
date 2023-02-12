@@ -1,0 +1,33 @@
+@use 'sass:math';
+@import '../common/var.scss';
+@import './mixin.scss';
+
+@mixin col-size($size) {
+  @include res($size) {
+    @for $i from 0 through 24 {
+      //span属性
+      &.#{$namespace}-col-#{$size}-#{$i} {
+        max-width: (math.div(1, 24) * $i * 100) * 1%;
+        flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
+      }
+      //offset
+      &.#{$namespace}-col-#{$size}-offset-#{$i} {
+        margin-left: (math.div(1, 24) * $i * 100) * 1%;
+      }
+      //pull向左
+      &.#{$namespace}-col-#{$size}-pull-#{$i} {
+        position: relative;
+        right: (math.div(1, 24) * $i * 100) * 1%;
+      }
+      //push向右
+      &.#{$namespace}-col-#{$size}-push-#{$i} {
+        position: relative;
+        left: (math.div(1, 24) * $i * 100) * 1%;
+      }
+      //order
+      &.#{$namespace}-col-#{$size}-order-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

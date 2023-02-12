@@ -1,16 +1,12 @@
 {
-  "name": "kunlun-ui",
+  "name": "theme-chalk",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "module": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@kunlun-ui/utils": "workspace:^1.0.0"
-  }
+  "license": "ISC"
 }

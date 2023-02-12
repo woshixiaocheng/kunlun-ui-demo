@@ -1,0 +1,80 @@
+@import './mixins/mixin.scss';
+@import './mixins/button.scss';
+@import  './common/var.scss';
+
+@include b(button){
+    //默认样式，凡是个性化的赋值都赋变量，这样子修改的时候只需要改scss即可
+    display: inline-flex;
+    margin-right: 12px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    vertical-align: middle;//icon
+    cursor: pointer;
+    outline: none;//和边框不一样
+    white-space: nowrap;
+    font-weight: $--button-font-weight;
+    color: $--button-default-font-color;
+    background-color: $--button-default-background-color;
+    border: 1px solid $--button-default-border-color;
+    transition: 0.1s;
+    @include button-size($--button-size,$--button-padding-vertical,$--button-padding-horizontal,$--button-font-size-base,$--button-border-radius);
+    &:hover,&:focus{
+        color:$--color-primary;
+        border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+    }
+    @include when(plain){
+        &:hover,&:focus,&:active{
+            color: $--color-primary;
+            border-color: $--color-primary;
+            background-color: $--color-white;
+        }
+    }
+    @include when(disabled){
+        cursor: not-allowed;
+        color: mix($--color-white,$--button-default-font-color,60%);
+        border-color: mix($--color-white,$--button-default-border-color,20%);
+        background-color: mix($--color-white,$--button-default-background-color,40%);
+        &:hover,&:focus{
+            color:mix($--color-white,$--button-default-font-color,60%);
+            border-color: mix($--color-white,$--button-default-border-color,20%);
+        background-color: mix($--color-white,$--button-default-background-color,40%);
+        }
+    }
+    // 处理type
+    @include m(primary){
+        @include button-type($--button-primary-font-color,$--button-primary-background-color,$--button-primary-border-color)
+        
+    }
+    @include m(success){
+        @include button-type($--button-success-font-color,$--button-success-background-color,$--button-success-border-color)
+    }
+    @include m(info){
+        @include button-type($--button-info-font-color,$--button-info-background-color,$--button-info-border-color)
+    }
+    @include m(warning){
+        @include button-type($--button-warning-font-color,$--button-warning-background-color,$--button-warning-border-color)
+    }
+    @include m(danger){
+        @include button-type($--button-danger-font-color,$--button-danger-background-color,$--button-danger-border-color)
+    }
+    //处理大小
+    @include m(large){
+        @include button-size($--button-large-size,$--button-large-padding-vertical,$--button-large-padding-horizontal,$--button-large-font-size,$--button-large-border-radius);
+    }
+    @include m(small){
+        @include button-size($--button-small-size,$--button-small-padding-vertical,$--button-small-padding-horizontal,$--button-small-font-size,$--button-small-border-radius);
+    }
+    //is部分
+    @include when(round){
+        border-radius: $--border-radius-round;
+    }
+    @include when(circle){
+        border-radius:$--border-radius-circle;
+        padding: 0;
+        width: $--button-size;
+    }
+  
+
+}

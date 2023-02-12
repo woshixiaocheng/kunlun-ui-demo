@@ -1,0 +1,47 @@
+//提供方法
+@import '../common/var.scss';
+
+//媒体查询封装，key是xs,sm等这些
+@mixin res($key, $map: $--breakpoints) {
+  //判断输入的key值在不在我们的map里面
+  @if map-has-key($map, $key) {
+    //给媒体查询传值,inspect把变量变成字符串
+    @media screen and #{inspect(map-get($map,$key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefined key:`#{$map}`"; //如果key不存在要fanhui@warn
+  }
+}
+//处理类名连接的
+//定义把kl-组件连接的方法如kl-button,kl-icon,参数$block代表组件名
+@mixin b($block) {
+  $B: $namespace + '-' + $block;
+  .#{$B} {
+    @content;
+  }
+}
+//状态的.kl-button.is-xx
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+//修饰的 .x-button--primary
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+//内容.x-button__header
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separator + $element} {
+      @content;
+    }
+  }
+}

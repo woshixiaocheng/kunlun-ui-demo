@@ -1,0 +1,52 @@
+@use 'sass:math';
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@import './mixins/col';
+
+@include b(col) {
+  //kl-col
+  box-sizing: border-box;
+  // @include when(guttered) {
+  //   display: block;
+  //   min-height: 1px;
+  // }
+  &.#{$namespace}-col-0 {
+    display: none;
+  }
+  //每一个分为24份，通过for循环
+  @for $i from 0 through 24 {
+    //span属性
+    &.#{$namespace}-col-#{$i} {
+      max-width: (math.div(1, 24) * $i * 100) * 1%;
+      flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
+    }
+    //offset
+    &.#{$namespace}-col-offset-#{$i} {
+      margin-left: (math.div(1, 24) * $i * 100) * 1%;
+    }
+    //pull向左
+    &.#{$namespace}-col-pull-#{$i} {
+      position: relative;
+      right: (math.div(1, 24) * $i * 100) * 1%;
+    }
+    //push向右
+    &.#{$namespace}-col-push-#{$i} {
+      position: relative;
+      left: (math.div(1, 24) * $i * 100) * 1%;
+    }
+    //order
+    &.#{$namespace}-col-order-#{$i} {
+      order: $i;
+    }
+  }
+
+  @include col-size(xs);
+
+  @include col-size(sm);
+
+  @include col-size(md);
+
+  @include col-size(lg);
+
+  @include col-size(xl);
+}
