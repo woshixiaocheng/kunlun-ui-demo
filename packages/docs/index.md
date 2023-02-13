@@ -11,10 +11,10 @@ hero:
     actions:
         - theme: brand
           text: 什么是 Kunlun Design ?
-          link: /zh/guide/intro
+          link: /md/zh/guide/intro
         - theme: alt
           text: 快速开始
-          link: /zh/guide/start
+          link: /md/zh/guide/start
 
 features:
     - icon: ⚡️

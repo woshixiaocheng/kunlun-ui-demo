@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev .",
+    "docs:dev": "vitepress dev . --port 8888",
     "docs:build": "vitepress build .",
     "docs:serve": "vitepress serve ."
   },
@@ -13,5 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-alpha.45"
+  },
+  "dependencies": {
+    "kunlun-ui": "workspace:^1.0.0",
+    "theme-chalk": "workspace:^1.0.0"
   }
 }

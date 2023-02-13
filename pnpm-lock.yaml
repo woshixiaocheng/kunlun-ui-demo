@@ -56,7 +56,12 @@ importers:
 
   packages/docs:
     specifiers:
+      kunlun-ui: workspace:^1.0.0
+      theme-chalk: workspace:^1.0.0
       vitepress: 1.0.0-alpha.45
+    dependencies:
+      kunlun-ui: link:../components
+      theme-chalk: link:../theme-chalk
     devDependencies:
       vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.45
 
