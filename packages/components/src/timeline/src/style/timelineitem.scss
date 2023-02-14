@@ -1,0 +1,63 @@
+.kl-timeline-item {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+
+    position: relative;
+    .kl-timeline-item--tail {
+        position: absolute;
+        top: 0;
+        left: 4.5px;
+        height: 100%;
+        width: 1px;
+        z-index: -1;
+        background-color: #e4e7ed;
+    }
+    .kl-timeline-item--dot--normal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        border: 2px solid #67cdcc;
+        background-color: #fff;
+    }
+    .kl-timeline-item--content {
+        padding: 0 20px;
+        line-height: 22px;
+        padding-bottom: 20px;
+    }
+}
+//mode右边
+.kl-timeline-item--right {
+    flex-direction: row-reverse;
+    .kl-timeline-item--dot--normal {
+        left: calc(100% - 9px);
+    }
+    .kl-timeline-item--tail {
+        left: calc(100% - 4.5px);
+    }
+    .content {
+        text-align: right;
+    }
+}
+//mode中间
+.kl-timeline-item--center {
+    justify-content: center;
+    .kl-timeline-item--dot--normal {
+        left: calc(50% - 9px) ;
+    }
+    .kl-timeline-item--tail {
+        left: calc(50% - 4.5px);
+    }
+    &:nth-child(odd) .kl-timeline-item--content {
+        margin-left: 20%;
+    }
+    &:nth-child(even) .kl-timeline-item--content {
+        margin-right: 20%;
+    }
+    .kl-timeline-item--content {
+        text-align: center;
+    }
+}
