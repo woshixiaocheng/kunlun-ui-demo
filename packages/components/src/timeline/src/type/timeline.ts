@@ -9,6 +9,11 @@ export const timelineProps = {
     reverse: {
         type: Boolean,
         default: false
+    },
+    type: {
+        type: String,
+        value: ['default', 'message'],
+        default: 'default'
     }
 }
 //type就是指定timelineProps是一个类型

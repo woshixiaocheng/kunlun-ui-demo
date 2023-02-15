@@ -16,12 +16,19 @@ export const timelineItemProps = {
     },
     dottype: {
         type: String,
-        value: ['primary', 'success', 'warning', 'danger', 'info']
+        value: ['primary', 'success', 'warning', 'danger', 'info', 'default']
     },
-    type: {
+    dotcolor: {
+        type: String
+    },
+    dotsolid: {
+        type: Boolean,
+        default: false
+    },
+    dotsize: {
         type: String,
-        value: ['default', 'dialog'],
-        default: 'default'
+        value: ['normal', 'large'],
+        default: 'normal'
     }
 }
 //type就是指定timelineProps是一个类型
